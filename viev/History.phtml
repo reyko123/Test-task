@@ -26,15 +26,15 @@ $history = New HistoryController;
         <div class="title">История изменений</div>
         <!-- Добавление новости -->
         <div class="paragraph">
-            <p><strong> <?=$trigger->SetNewNews()['date_create']?></strong>: Добавлена новая новость №<?=$trigger->SetNewNews()['id_new']?> «<?=$trigger->SetNewNews()['title_new']?>»:</p>
+            <p><strong> <?=$trigger->getNewNews()['date_create']?></strong>: Добавлена новая новость №<?=$trigger->getNewNews()['id_new']?> «<?=$trigger->getNewNews()['title_new']?>»:</p>
         </div>
             <div class="ulist">
                 <ul>
                     <li>
-                        <p>Название новости: <strong><?=$trigger->SetNewNews()['title_new']?></strong></p>
+                        <p>Название новости: <strong><?=$trigger->getNewNews()['title_new']?></strong></p>
                     </li>
                     <li>
-                        <p>Содержание новости: <strong><?=$trigger->SetNewNews()['content_new']?></strong></p>
+                        <p>Содержание новости: <strong><?=$trigger->getNewNews()['content_new']?></strong></p>
                     </li>
                 </ul>
             </div>
@@ -52,9 +52,9 @@ $history = New HistoryController;
                     }
 
                     // Проверка на отображение удаленной или актуальной записи
-                    if ($trigger->SetDelNews()['id_del'] != null){
+                    if ($trigger->getDelNews()['id_del'] != null){
 
-                        $value = $trigger->SetDelNews()['title_del'];
+                        $value = $trigger->getDelNews()['title_del'];
                     } else {
                         $value = DbController::SelectNewsById()['title'];
                     }
@@ -78,9 +78,9 @@ $history = New HistoryController;
             <?endforeach?>
         </div>
         <!-- Удаление новости -->
-        <? if($trigger->SetDelNews()['id_del'] != null):?>
+        <? if($trigger->getDelNews()['id_del'] != null):?>
             <div class="paragraph">
-                <p><strong><?=$trigger->SetDelNews()['date_del']?></strong>: Новость №<?=$trigger->SetDelNews()['id_del']?> «<?=$trigger->SetDelNews()['title_del']?>» была избавлена от этой бренной ноши</p>
+                <p><strong><?=$trigger->getDelNews()['date_del']?></strong>: Новость №<?=$trigger->getDelNews()['id_del']?> «<?=$trigger->getDelNews()['title_del']?>» была избавлена от этой бренной ноши</p>
             </div>
         <?php endif;?>
     <?php endif;?>

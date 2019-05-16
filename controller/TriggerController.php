@@ -17,7 +17,7 @@ class TriggerController extends MainController
 	}
 
 	// sql для новой новсти
-	public function setNewNews()
+	public function getNewNews()
 	{
 		$sql = "SELECT * FROM new_ttss WHERE id_new = :id_new";
 		$params = ['id_new' => parent::$id_news_GET];
@@ -36,7 +36,7 @@ class TriggerController extends MainController
 	}
 
 	// sql для удаляемой новости
-	public function setDelNews()
+	public function getDelNews()
 	{
 		$sql = "SELECT * FROM delete_ttss WHERE id_del = :id_del";
 		$params = ['id_del' => parent::$id_news_GET];

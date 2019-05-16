@@ -14,7 +14,7 @@ class HistoryController extends MainController
 		parent::__construct();
 	}
 
-	public function SetHistory()
+	public function getHistory()
 	{
 		$sql = "SELECT *
 				FROM update_ttss
@@ -32,14 +32,14 @@ class HistoryController extends MainController
 
   public function PrintHistory()
 	{
-   	foreach ($this->SetHistory() as $key) {
+   	foreach ($this->getHistory() as $key) {
 			foreach ($key as $value => $as) {
 				echo "$value". '=>' ."$as" . "<br>";
 		}
 		echo "<hr>";
 		}
 
-		foreach ($this->SetHistory() as $key) {
+		foreach ($this->getHistory() as $key) {
 			echo  $key['date_update'];
 		}
   }
