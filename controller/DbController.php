@@ -67,13 +67,6 @@ class DbController extends MainController
 		$stmt->execute($params);
 		$res = $stmt->fetch(PDO::FETCH_LAZY);
 
-		/*if($stmt->errorCode() != PDO::ERR_NONE)
-    	{
-	    	$info = $stmt->errorInfo();
-	    	echo implode('<br>', $info);
-	    	exit();
-		}	*/
-
 		return $res;
 	}
 

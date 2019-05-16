@@ -6,7 +6,6 @@ include_once "./controller/TriggerController.php";
 include_once "./controller/IndexController.php";
 include_once "./controller/HistoryController.php";
 include_once './controller/MainController.php';
-include_once './controller/Test.php';
 
 $history = new HistoryController;
 $pub_db = new DbController;
@@ -58,16 +57,8 @@ $pub_db->edit();
 $ind_contrl->InitNews();
 $ind_contrl->PrintErrors();
 
+//$trigger -> test1('name_column', 'content_column');
 ?>
-<?php
-    $lol = New Test;
-    $kk = 11;
-
-    echo ($lol->Lol($kk)) . "<br>";
-    $kk += 4;
-
-    echo "$kk";
- ?>
 
 </body>
 </html>

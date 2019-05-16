@@ -41,7 +41,7 @@ $history = New HistoryController;
         <hr>
         <div class="content">
 
-            <? foreach ($history->SetHistory() as $colum_name) :?>
+            <? foreach ($history->getHistory() as $colum_name) :?>
                 <!-- ОСТОРОЖНО, КОСТЫЛИ!-->
                 <?php
                     // Проверка для соотвестия отображеня содержанимого нужной записи
@@ -56,7 +56,7 @@ $history = New HistoryController;
 
                         $value = $trigger->getDelNews()['title_del'];
                     } else {
-                        $value = DbController::SelectNewsById()['title'];
+                        $value = $new_value;
                     }
 
                 ?>
