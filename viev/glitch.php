@@ -122,7 +122,7 @@ svg{
   </defs>
 
 <g>
-  <text x="50" y="100">Проход для Ботьки</text>
+  <text x="50" y="100">Test</text>
 </g>
 </svg>
 </body>
